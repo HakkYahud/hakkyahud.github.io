@@ -3,16 +3,11 @@
 		<title>This is a basic HTA file</title>
 	</head>
 	<body>
-		<h2>Hello World</h2>
-		<p>This is just a basic HTA file</p>
+		<h2>Test1</h2>
 	</body>
 
-	<script type="VBScript">
-		Function Pwn()
-			Set shell = CreateObject("WScript.Shell")
-			shell.Run("ping 8.8.8.8"),0,true
-		End Function
-
-		Pwn
+	<script LANGUAGE="VBScript">
+		Set cmd = CreateObject("WScript.Shell") 
+		cmd.run("ping 1.1.1.1")
 	</script>
 </html>
