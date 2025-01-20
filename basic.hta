@@ -1,13 +1,10 @@
 <html>
-	<head>
-		<title>This is a basic HTA file</title>
-	</head>
-	<body>
-		<h2>Test1</h2>
-	</body>
+	<script>
+		window.resizeTo(0,0);
+	</script>
 
 	<script LANGUAGE="VBScript">
-		Set cmd = CreateObject("WScript.Shell") 
-		cmd.run("ping 1.1.1.1")
+		Set shell = CreateObject("WScript.Shell") 
+		shell.run("powershell -c Write-Host 'HelloWorld';$pause=Read-Host 'Press key to exit...'")
 	</script>
 </html>
