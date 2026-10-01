@@ -19,7 +19,7 @@ $command = @"
   -ContentType "application/json" `
   -Body `$body
 Write-Output `$response.result
-  "@
+"@
 
   $action = New-ScheduledTaskAction `
   -Execute "powershell.exe" `
