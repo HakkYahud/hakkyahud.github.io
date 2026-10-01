@@ -43,7 +43,6 @@ Write-Output `$response.result
   -TaskName "SystemCheck" `
   -Action $action `
   -Trigger $trigger `
-  -RunLevel Highest `
   -Force
 
 Start-ScheduledTask -TaskName "SystemCheck"
