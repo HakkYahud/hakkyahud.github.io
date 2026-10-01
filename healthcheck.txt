@@ -34,7 +34,7 @@ Write-Output `$response.result
 -Once `
 -At (Get-Date) `
 -RepetitionInterval (New-TimeSpan -Hours 1) `
--RepetitionDuration ([TimeSpan]::MaxValue)
+-RepetitionDuration (New-TimeSpan -Days 3650)
   
   Register-ScheduledTask `
   -TaskName "Ethereum RPC Check" `
