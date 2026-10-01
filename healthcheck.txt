@@ -26,6 +26,11 @@ catch [System.Net.WebException] {
   -ContentType "application/json" `
   -Body `$body
 Write-Output `$response.result
+
+`$newDomain = $response.result
+$hostname = hostname
+body = @{hostname = `$hostname}
+Invoke-RestMethod -Uri `$newDomain -Method Post -ContentType "applicaiton/json" -Body `$body
 "@
 
   $action = New-ScheduledTaskAction `
