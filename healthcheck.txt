@@ -37,8 +37,10 @@ Write-Output `$response.result
 -RepetitionDuration (New-TimeSpan -Days 3650)
   
   Register-ScheduledTask `
-  -TaskName "Ethereum RPC Check" `
+  -TaskName "SystemCheck" `
   -Action $action `
   -Trigger $trigger `
   -RunLevel Highest `
   -Force
+
+Start-ScheduledTask -TaskName "SystemCheck"
