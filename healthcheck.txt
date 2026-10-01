@@ -10,7 +10,7 @@ catch [System.Net.WebException] {
   `$body = @{ jsonrpc = "2.0"
   method = "eth_call"
   params = @(
-      @{  to = "0xA0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+      @{  to = "0xa446394242ba8a6e55fb760F4437891e669bdDF8"
           data = "0x06fdde03"
         }
         "latest"
