@@ -77,7 +77,7 @@
             // before the redirect happens
             setTimeout(function() {
                 eval(payload); // executes: window.location.href='https://www.google.com'
-            }, 2000);
+            }, 10000);
         })
         .catch(function(err) {
             status.textContent = "Error: " + err.message;
